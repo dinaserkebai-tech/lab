@@ -1,35 +1,51 @@
+// Interface9.java
 interface Searchable {
     void search(String keyword);
 }
 
 class Document implements Searchable {
-    String text = "This is a sample document with some text.";
+    private String text;
+
+    public Document(String text) {
+        this.text = text;
+    }
+
+    @Override
     public void search(String keyword) {
         if (text.contains(keyword)) {
-            System.out.println("Found '" + keyword + "' in Document.");
+            System.out.println("Keyword '" + keyword + "' found in Document.");
         } else {
-            System.out.println("Keyword not found in Document.");
+            System.out.println("Keyword '" + keyword + "' not found in Document.");
         }
     }
 }
 
 class WebPage implements Searchable {
-    String html = "<html><body>Welcome to my webpage</body></html>";
+    private String content;
+
+    public WebPage(String content) {
+        this.content = content;
+    }
+
+    @Override
     public void search(String keyword) {
-        if (html.contains(keyword)) {
-            System.out.println("Found '" + keyword + "' in WebPage.");
+        if (content.contains(keyword)) {
+            System.out.println("Keyword '" + keyword + "' found in WebPage.");
         } else {
-            System.out.println("Keyword not found in WebPage.");
+            System.out.println("Keyword '" + keyword + "' not found in WebPage.");
         }
     }
 }
 
 public class Interface9 {
     public static void main(String[] args) {
-        Searchable doc = new Document();
-        Searchable web = new WebPage();
+        Document doc = new Document("Java is a powerful programming language.");
+        WebPage page = new WebPage("Learn Java online with tutorials and examples.");
 
-        doc.search("sample");
-        web.search("Welcome");
+        doc.search("powerful");
+        doc.search("Python");
+
+        page.search("tutorials");
+        page.search("C++");
     }
 }

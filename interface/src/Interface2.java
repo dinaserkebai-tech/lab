@@ -1,5 +1,6 @@
+
 interface Animal {
-    void bark();
+    void bark(); // Әдіс анықтамасы (аргументсіз, мән қайтармайды)
 }
 
 class Dog implements Animal {
@@ -10,7 +11,7 @@ class Dog implements Animal {
 
 public class Interface2 {
     public static void main(String[] args) {
-        Animal dog = new Dog();
-        dog.bark();
+        Dog myDog = new Dog();
+        myDog.bark();
     }
 }

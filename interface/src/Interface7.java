@@ -1,53 +1,55 @@
-interface SortableAsc {
-    void sort(int[] array);
+// Interface7.java
+import java.util.Arrays;
+
+interface SortableInterface {
+    void sort(int[] arr); // Массивті өсу ретімен сұрыптайтын әдіс
 }
 
-class BubbleSort implements SortableAsc {
-    public void sort(int[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
-            for (int j = 0; j < array.length - i - 1; j++) {
-                if (array[j] > array[j + 1]) {
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
+class BubbleSortAlgo implements SortableInterface {
+    public void sort(int[] arr) {
+        System.out.println("Sorting using Bubble Sort...");
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                 }
             }
         }
+        System.out.println("Sorted array: " + Arrays.toString(arr));
     }
 }
 
-class SelectionSort implements SortableAsc {
-    public void sort(int[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
+class SelectionSortAlgo implements SortableInterface {
+    public void sort(int[] arr) {
+        System.out.println("Sorting using Selection Sort...");
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
             int minIndex = i;
-            for (int j = i + 1; j < array.length; j++) {
-                if (array[j] < array[minIndex]) {
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
                     minIndex = j;
                 }
             }
-            int temp = array[minIndex];
-            array[minIndex] = array[i];
-            array[i] = temp;
+            int temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
         }
+        System.out.println("Sorted array: " + Arrays.toString(arr));
     }
 }
 
 public class Interface7 {
     public static void main(String[] args) {
-        int[] arr1 = {5, 2, 9, 1, 5, 6};
-        int[] arr2 = arr1.clone();
+        int[] numbers1 = {5, 3, 8, 4, 2};
+        int[] numbers2 = {9, 7, 1, 6, 3};
 
-        SortableAsc bubble = new BubbleSort();
-        bubble.sort(arr1);
+        SortableInterface bubble = new BubbleSortAlgo();
+        SortableInterface selection = new SelectionSortAlgo();
 
-        SortableAsc selection = new SelectionSort();
-        selection.sort(arr2);
-
-        System.out.print("Bubble Sort: ");
-        for (int num : arr1) System.out.print(num + " ");
-        System.out.println();
-
-        System.out.print("Selection Sort: ");
-        for (int num : arr2) System.out.print(num + " ");
+        bubble.sort(numbers1);
+        selection.sort(numbers2);
     }
 }

@@ -1,33 +1,34 @@
+
 interface Flyable {
     void fly_obj();
 }
 
 class Spacecraft implements Flyable {
     public void fly_obj() {
-        System.out.println("Spacecraft is flying in space");
+        System.out.println("Spacecraft is flying in space.");
     }
 }
 
 class Airplane implements Flyable {
     public void fly_obj() {
-        System.out.println("Airplane is flying in the sky");
+        System.out.println("Airplane is flying in the sky.");
     }
 }
 
 class Helicopter implements Flyable {
     public void fly_obj() {
-        System.out.println("Helicopter is hovering in the air");
+        System.out.println("Helicopter is hovering above the ground.");
     }
 }
 
 public class Interface3 {
     public static void main(String[] args) {
-        Flyable f1 = new Spacecraft();
-        Flyable f2 = new Airplane();
-        Flyable f3 = new Helicopter();
+        Flyable spacecraft = new Spacecraft();
+        Flyable airplane = new Airplane();
+        Flyable helicopter = new Helicopter();
 
-        f1.fly_obj();
-        f2.fly_obj();
-        f3.fly_obj();
+        spacecraft.fly_obj();
+        airplane.fly_obj();
+        helicopter.fly_obj();
     }
 }

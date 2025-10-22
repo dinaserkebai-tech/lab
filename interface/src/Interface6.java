@@ -1,20 +1,21 @@
+// Interface6.java
 interface Drawable {
-    void draw();
+    void draw(); // Аргументсіз, мән қайтармайтын әдіс
 }
 
-class Circle2 implements Drawable {
+class DrawableCircle implements Drawable {
     public void draw() {
         System.out.println("Drawing a Circle");
     }
 }
 
-class Rectangle3 implements Drawable {
+class DrawableRectangle implements Drawable {
     public void draw() {
         System.out.println("Drawing a Rectangle");
     }
 }
 
-class Triangle2 implements Drawable {
+class DrawableTriangle implements Drawable {
     public void draw() {
         System.out.println("Drawing a Triangle");
     }
@@ -22,12 +23,12 @@ class Triangle2 implements Drawable {
 
 public class Interface6 {
     public static void main(String[] args) {
-        Drawable d1 = new Circle2();
-        Drawable d2 = new Rectangle3();
-        Drawable d3 = new Triangle2();
+        Drawable circle = new DrawableCircle();
+        Drawable rectangle = new DrawableRectangle();
+        Drawable triangle = new DrawableTriangle();
 
-        d1.draw();
-        d2.draw();
-        d3.draw();
+        circle.draw();
+        rectangle.draw();
+        triangle.draw();
     }
 }

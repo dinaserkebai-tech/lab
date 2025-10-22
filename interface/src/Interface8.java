@@ -1,33 +1,34 @@
+// Interface8.java
 interface Playable {
     void play();
 }
 
 class Football implements Playable {
     public void play() {
-        System.out.println("Playing Football");
+        System.out.println("Playing Football on the field.");
     }
 }
 
 class Volleyball implements Playable {
     public void play() {
-        System.out.println("Playing Volleyball");
+        System.out.println("Playing Volleyball on the court.");
     }
 }
 
 class Basketball implements Playable {
     public void play() {
-        System.out.println("Playing Basketball");
+        System.out.println("Playing Basketball in the gym.");
     }
 }
 
 public class Interface8 {
     public static void main(String[] args) {
-        Playable p1 = new Football();
-        Playable p2 = new Volleyball();
-        Playable p3 = new Basketball();
+        Playable football = new Football();
+        Playable volleyball = new Volleyball();
+        Playable basketball = new Basketball();
 
-        p1.play();
-        p2.play();
-        p3.play();
+        football.play();
+        volleyball.play();
+        basketball.play();
     }
 }

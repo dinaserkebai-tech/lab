@@ -1,34 +1,43 @@
+// Interface1.java
 interface Shape {
-    double getArea();
+    double getArea(); // Абстрактный метод
 }
 
 class Rectangle implements Shape {
-    double width, height;
-    Rectangle(double width, double height) {
+    double length;
+    double width;
+
+    Rectangle(double length, double width) {
+        this.length = length;
         this.width = width;
-        this.height = height;
     }
+
     public double getArea() {
-        return width * height;
+        return length * width;
     }
 }
 
 class Circle implements Shape {
     double radius;
+
     Circle(double radius) {
         this.radius = radius;
     }
+
     public double getArea() {
         return Math.PI * radius * radius;
     }
 }
 
 class Triangle implements Shape {
-    double base, height;
+    double base;
+    double height;
+
     Triangle(double base, double height) {
         this.base = base;
         this.height = height;
     }
+
     public double getArea() {
         return 0.5 * base * height;
     }
@@ -36,12 +45,12 @@ class Triangle implements Shape {
 
 public class Interface1 {
     public static void main(String[] args) {
-        Shape r = new Rectangle(5, 4);
-        Shape c = new Circle(3);
-        Shape t = new Triangle(6, 2);
+        Shape rectangle = new Rectangle(5, 3);
+        Shape circle = new Circle(4);
+        Shape triangle = new Triangle(6, 2);
 
-        System.out.println("Rectangle area: " + r.getArea());
-        System.out.println("Circle area: " + c.getArea());
-        System.out.println("Triangle area: " + t.getArea());
+        System.out.println("Rectangle area: " + rectangle.getArea());
+        System.out.println("Circle area: " + circle.getArea());
+        System.out.println("Triangle area: " + triangle.getArea());
     }
 }
